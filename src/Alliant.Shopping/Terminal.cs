@@ -9,7 +9,7 @@ namespace Alliant.Shopping
 {
     public class Terminal : ITerminal
     {
-        public ShoppingCart _shoppingCart = new ShoppingCart();        
+        private ShoppingCart _shoppingCart = new ShoppingCart();        
         public void Scan(string item)
         {
             this._shoppingCart.Products.Add(new Product(item));
@@ -28,7 +28,7 @@ namespace Alliant.Shopping
             return total;
         }
 
-        public decimal DiscountCalculator(Product[] products)
+        private decimal DiscountCalculator(Product[] products)
         {
             int volumeCounter = 0;
             bool volQuantityMet = false;
